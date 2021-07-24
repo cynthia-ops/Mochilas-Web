@@ -1,0 +1,60 @@
+<div class="mx-auto">
+    <div class="row mt-4 mb-4" style="margin: 0 0 0 0;">
+        <div class="col-md-4 ml-auto">
+            <h3 class="card-text">{{mochila.tiposMochila}} {{mochila.color}} {{mochila.genero}}</h3>
+            <span style="font-weight: bold;font-size: 10px;">id: {{mochila.idFirebase}}</span>
+            <ngb-accordion [closeOthers]="true" activeIds="static-1">
+                <ngb-panel id="static-1" title="Descripcion">
+                    <ng-template ngbPanelContent>
+                        <p style="text-transform: capitalize;">{{mochila.descripcion}}</p>
+                        <p>Calificacion:</p>
+                        <div style="color: orange; font-size: xx-large;">
+                            <ngb-rating [max]="5" [(rate)]="mochila.calificacion" [readonly]="true">
+                            </ngb-rating>
+                        </div>
+                    </ng-template>
+                </ngb-panel>
+
+                <ngb-panel id="static-2" title="Detalles">
+                    <ng-template ngbPanelContent>
+                        <p style="text-transform: capitalize;">genero: {{mochila.genero}}</p>
+                        <p style="text-transform: capitalize;">Color: {{mochila.color}}</p>
+                        <p style="text-transform: capitalize;">Medidas: {{mochila.medidas}} CM</p>
+                        <p style="text-transform: capitalize;">material: {{mochila.material}}</p>
+                    </ng-template>
+                </ngb-panel>
+            </ngb-accordion>
+        </div>
+
+        <div class="col-md-4 mx-auto">
+            <img style="max-width: 568px; max-height: 455px;" [src]="mochila.url">
+        </div>
+
+        <div class="col-md-2 mr-auto" style="margin-top: auto; margin-bottom: auto;">
+            <h3 style="text-align: center;"><strong>$ {{mochila.precio|number}}.00</strong></h3>
+            <!-- <div ngbDropdown class="d-inline-block btn-block">
+                <button style="border-radius: 70px;" class="btn btn-block btn-outline-info" id="dropdownBasic1"
+                    ngbDropdownToggle>Cantidad</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button ngbDropdownItem>1</button>
+                    <button ngbDropdownItem>2</button>
+                    <button ngbDropdownItem>3</button>
+                    <button ngbDropdownItem>4</button>
+                    <button ngbDropdownItem>5</button>
+                    <button ngbDropdownItem>Otra Cantidad</button>
+                </div>
+            </div> -->
+            <div *ngIf="toast==true" class="mt-3">
+                <ngb-toast style="background-color: #18bc9c; border-radius: 70px;" [autohide]="true" [delay]="4000">
+                    Se ha agregado al carrito!
+                </ngb-toast>
+            </div>
+            <div class="d-grid gap-2">
+                <button class="mt-5 btn btn-block btn-primary" style="border-radius: 70px;"
+                    (click)="agregarCarrito(mochila)">Agregar Carrito</button>
+                <button class="mt-3 btn btn-block btn-success" style="border-radius: 70px;"
+                (click)="comprar(mochila)">Comprar</button>
+            </div>
+        </div>
+
+    </div>

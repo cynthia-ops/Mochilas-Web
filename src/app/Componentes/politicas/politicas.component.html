@@ -1,0 +1,60 @@
+<div class="row" style="margin:5vh">
+    <div class="col-md-4" style="margin: auto;">
+        <div class="card">
+            <div class="card-body">
+                <ul>
+                    <li>
+                        <a style="font-size: x-large;" (click)="setValor(0)" [routerLink]>políticas de privacidad</a>
+                    </li>
+                    <li>
+                        <a style="font-size: x-large;" (click)="setValor(1)" [routerLink]>Politicas de devolución</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col" style="min-height: 23rem;">
+        <div class="card" *ngIf="numero==0">
+            <div class="card-body">
+                <h3 class="card-title">Políticas de privacidad</h3>
+                <p class="card-text">Además de la información que nos puedas proporcionar, también recopilamos
+                    información cuando
+                    interactúas con nuestro sitio web y nuestros productos y servicios para mejorar la experiencia.
+                </p>
+                <p> Estamos conscientes de la importancia que tiene para usted saber cómo utilizamos sus datos
+                    personales y le agradecemos que confíe que lo haremos con cuidado y sensatez. Este Aviso de
+                    Privacidad describe la forma en que Servicios Comerciales Amazon México, S. de R.L. de C.V., y sus
+                    filiales (colectivamente "Cyn&Itz") recopilan y tratan sus datos personales a través de los sitios
+                    web, dispositivos, productos, servicios, tiendas en línea y aplicaciones de Cyn&Itz que hacen
+                    referencia a este Aviso de Privacidad (conjuntamente "Servicios de Cyn&Itz "). Al utilizar los
+                    Servicios de Cyn&Itz, usted está dando su consentimiento a las prácticas descritas en este Aviso de
+                    Privacidad.
+                </p>
+                <p>
+                    <span>
+                        Si tiene preguntas sobre su cuenta o sus pedidos, por favor contacte al Servicio de Atención al
+                        Cliente enviando un correo electrónico a la siguiente dirección:
+                        <strong>201810831@tese.edu.mx</strong>
+                    </span>
+                </p>
+            </div>
+        </div>
+
+        <div class="card" *ngIf="numero==1">
+            <div class="card-body">
+                <h3 class="card-title">políticas de devolución</h3>
+                <h4 class="card-title">Para hacer una devolución sigue los siguientes pasos:</h4>
+                <ul>
+                    <li>1. Desde el menú principal selecciona la opción <strong>Mis pedidos</strong></li>
+                    <li>2. En la lista de los pedidos que has realizado, elige el producto de deseas devolver</li>
+                    <li>3. Selecciona <strong>Devolver o reemplazar productos</strong> e indica el motivo de la
+                        devolución</li>
+                    <li>4. Elige la forma en que quieres recibir tu reembolso, puede ser a tu tarjeta o saldo en tu
+                        cuenta Amazon</li>
+                    <li>5. Programa la recolección del producto a la direccion que tu selecciones, o envía el paquete
+                        desde cualquier sucursal de mensajería disponible</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

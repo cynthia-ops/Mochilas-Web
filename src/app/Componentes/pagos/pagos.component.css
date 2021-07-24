@@ -1,0 +1,20 @@
+a {
+    text-decoration: none;
+}
+
+.pagos {
+    margin-right: 3px;
+}
+
+.descripcion {
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.cantidad {
+    text-align: center;
+    width: 60px;
+    font-weight: bold;
+    
+}
